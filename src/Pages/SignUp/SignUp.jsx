@@ -7,16 +7,50 @@ import { Helmet } from "react-helmet-async";
 // import Swal from "sweetalert2";
 // import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import logo from '../../../public/login-removebg-preview.png'
+import { AuthContext } from "../../AuthProviders/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+     const {createUser, updateUserProfile} = useContext(AuthContext);
+     const navigate = useNavigate();
 
-
-    const navigate = useNavigate();
 
     const onSubmit = data => {
-
+        console.log(data);
+    createUser(data.email, data.password)
+    .then(result => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      updateUserProfile(data.name, data.photoURL)
+      .then(() => {
+        const saveUser = { name: data.name, email: data.email }
+        fetch('http://localhost:5000/users', {
+          method: "POST",
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(saveUser)
+        })
+        .then(res => res.json())
+        .then(data => {
+          if( data.insertedId){
+            reset();
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'User Created Successfully',
+              showConfirmButton: false,
+              timer: 1500
+            });
+            navigate('/');
+          }
+        })
+      
+      })
+      .catch(error => console.log(error))
+    })
     }
     
     return (
@@ -68,14 +102,14 @@ const SignUp = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input type="submit" value='Sign Up' className="btn btn-primary" />
+                                <input type="submit" value='Sign Up' className="btn font-bold text-xl bg-red-400" />
                             </div>
                         </form>
-                        <p><small>Already have an account <Link to='/login'>Login</Link></small></p>
+                        <p className="pl-8 mb-4">Already have an account <Link className="link-secondary link" to='/login'>Login</Link></p>
                         {/* <SocialLogin></SocialLogin> */}
                     </div>
                     <div className="text-center lg:text-left">
-                       <p className="py-6"><img src={logo} alt="" /></p>
+                       <p ><img src={logo} alt="" /></p>
                    </div>
                 </div>
             </div>

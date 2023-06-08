@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css'
 import logo from '../../../../public/logo.png'
+import { AuthContext } from '../../../AuthProviders/AuthProvider';
 
 const NavBar = () => {
+    const {user} = useContext(AuthContext)
 
     const navItems = <>
     <li className=' '>
@@ -32,7 +34,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                 <div className='flex items-center justify-center'>
-                <img src={logo} alt="" className='w-20 ' />
+                <img src={logo} alt="" className='w-24' />
                 <h1 className='text-3xl bg-transparent text-red-400 font-bold'>In Motion</h1>
                 </div>
 
@@ -44,9 +46,9 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        
+                        user && <img className=' mr-2 w-16 rounded-full h-16 bg-cover' src={user?.photoURL} alt={user?.displayName} />
                     }
-                    <Link to='/login' className="btn font-bold rounded-full">Login</Link>
+                    <Link to='/login' className="btn font-bold rounded-full bg-red-300">Login</Link>
                 </div>
             </div>
         </div>
