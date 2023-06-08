@@ -32,7 +32,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                 <div className='flex items-center justify-center'>
-                <img src={logo} alt="" className='w-20' />
+                <img src={logo} alt="" className='w-20 ' />
                 <h1 className='text-3xl bg-transparent text-red-400 font-bold'>In Motion</h1>
                 </div>
 
@@ -43,7 +43,10 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    {
+                        
+                    }
+                    <Link className="btn font-bold rounded-full">Login</Link>
                 </div>
             </div>
         </div>
