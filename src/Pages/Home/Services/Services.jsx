@@ -1,13 +1,16 @@
 import React from 'react';
 import service from './../../../assets/Banner/service.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Services = () => {
+    AOS.init();
     return (
         <div className='md:flex items-center justify-between'>
-            <div className=''>
+            <div data-aos="fade-right" data-aos-duration="2000" className=''>
                 <img className='w-[90%] rounded-l-full   mx-auto' src={service} alt="" />
             </div>
-            <div className='text-center md:text-start py-2'>
+            <div data-aos="fade-left" data-aos-duration="2000" className='text-center md:text-start py-2'>
                 <h3 className='text-red-600 font-semibold uppercase'>Get Started</h3>
                 <h1 className='font-bold md:text-5xl text-3xl'>EVERYONE DESERVES THE CHANCE TO LEARN WITH US</h1>
                 <p className='py-3'>This also meant we needed to provide a learning environment run by experienced and successful coaches.</p>
