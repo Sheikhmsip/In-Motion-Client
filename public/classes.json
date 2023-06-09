@@ -1,0 +1,92 @@
+[
+    {
+      "image": "https://littlestepspt.com/wp-content/uploads/2019/06/dance-class.jpg",
+      "className": "Ballet",
+      "instructorName": "Sarah Johnson",
+      "availableSeats": 20,
+      "price": 60.00,
+      "rating": 4.5,
+      "totalStudents": 35
+    },
+    {
+      "image": "https://www.royalacademyofdance.org/app/uploads/2021/01/22115054/%E2%94%AC%C2%AEFoteini_20191214_StepIntoDance_BattleEducate_Mountview_Peckham-36-card.jpg",
+      "className": "Hip-Hop",
+      "instructorName": "Mike Thompson",
+      "availableSeats": 15,
+      "price": 45.00,
+      "rating": 4.2,
+      "totalStudents": 40
+    },
+    {
+      "image": "https://www.sassymamasg.com/wp-content/uploads/2022/05/dance-classes-singapore-ballet-class-kpop-class.jpg",
+      "className": "Kid's Dance",
+      "instructorName": "Maria Garcia",
+      "availableSeats": 12,
+      "price": 55.00,
+      "rating": 4.7,
+      "totalStudents": 50
+    },
+    {
+      "image": "https://thumbs.dreamstime.com/b/group-young-women-posing-arms-raised-having-fitness-dance-class-132567581.jpg",
+      "className": "Tap Dance",
+      "instructorName": "David Brown",
+      "availableSeats": 18,
+      "price": 50.00,
+      "rating": 4.4,
+      "totalStudents": 30
+    },
+    {
+      "image": "https://res-1.cloudinary.com/gll/image/upload/c_fit,f_auto,h_330,w_750/v1663249638/quril80zcl8eztwvnsk7.jpg",
+      "className": "Old Dance",
+      "instructorName": "Emily Davis",
+      "availableSeats": 10,
+      "price": 40.00,
+      "rating": 4.8,
+      "totalStudents": 60
+    },
+    {
+      "image": "https://www.k2dancestudios.com/wp-content/uploads/2019/10/banner-73-5daf2728a7e50.jpg",
+      "className": "Free Dance",
+      "instructorName": "Carlos Hernandez",
+      "availableSeats": 16,
+      "price": 55.00,
+      "rating": 4.6,
+      "totalStudents": 55
+    },
+    {
+      "image": "https://www.emotions.ae/wp-content/uploads/2019/05/classical-dance-class-kids.jpg",
+      "className": "Contemporary Fusion",
+      "instructorName": "Olivia Wilson",
+      "availableSeats": 14,
+      "price": 60.00,
+      "rating": 4.3,
+      "totalStudents": 45
+    },
+    {
+      "image": "https://marvel-b1-cdn.bc0a.com/f00000000283318/recreation.dartmouth.edu/sites/recreation.prod/files/styles/slide/public/recreation_dartmouth/images/dance.jpg?itok=VauO8-v1",
+      "className": "Breakdance",
+      "instructorName": "Daniel Lee",
+      "availableSeats": 12,
+      "price": 45.00,
+      "rating": 4.2,
+      "totalStudents": 30
+    },
+    {
+      "image": "https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/9/17/mle7ggnaqh5iqwanebzc/red-bull-dancers-at-funky-stadium-studio",
+      "className": "Bollywood",
+      "instructorName": "Priya Sharma",
+      "availableSeats": 15,
+      "price": 50.00,
+      "rating": 4.7,
+      "totalStudents": 70
+    },
+    {
+      "image": "https://www.footworksdance.com.au/dancestudio/wp-content/uploads/2018/04/AdobeStock_174508917_resized-cropped.jpeg",
+      "className": "African Dance",
+      "instructorName": "Kwame Adekunle",
+      "availableSeats": 20,
+      "price": 55.00,
+      "rating": 4.5,
+      "totalStudents": 65
+    }
+  ]

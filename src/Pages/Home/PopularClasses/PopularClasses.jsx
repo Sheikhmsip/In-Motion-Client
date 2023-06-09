@@ -1,19 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+// import useClasses from '../../../hooks/useClasses';
+import PopularClassCard from './PopularClassCard';
+import { useTypewriter } from 'react-simple-typewriter';
 
 const PopularClasses = () => {
+
+    const [text] = useTypewriter({
+        words: ['Popular Classes'],
+        loop: Infinity
+      })
+    // const [classes] = useClasses();
+    // console.log(classes)
+    const [classes, setClasses] = useState([]);
+    const [loading, setLoading] = useState(true);
+  console.log(classes)
+    useEffect(() =>{
+        fetch('http://localhost:5000/classes')
+        .then(res => res.json())
+        .then(data => {
+            setClasses(data);
+            console.log(data)
+            setLoading(false);
+           
+        
+        })
+    },[]);
+
     return (
         <div>
-            <h2 className='text-4xl py-2 text-center font-bold'>Our Popular Classes</h2>
-            <div className="card w-96 bg-base-100 shadow-xl image-full">
-                <figure><img src="https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5ea9e34e46e7505abc05dd3b_5e9a5a259e2eb3552c357d90_IMG_9425%2520(1)-min.jpeg" alt="" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Hip-Hop Dance</h2>
-                    <p>Instructor</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Details</button>
-                    </div>
-                </div>
-            </div>
+            <h2 className='text-5xl py-5 mb-2 text-red-400 text-center font-bold'>Our {text}</h2>
+           <div className=' grid md:grid-cols-3 gap-5 mb-10'>
+          {
+            classes.map(item => <PopularClassCard key={item._id} item={item}></PopularClassCard>)
+          }
+    
+           
+           </div>
         </div>
     );
 };
