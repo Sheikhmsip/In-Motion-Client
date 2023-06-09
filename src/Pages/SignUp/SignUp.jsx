@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-// import Swal from "sweetalert2";
+
 // import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import logo from '../../../public/login-removebg-preview.png'
 import { AuthContext } from "../../AuthProviders/AuthProvider";

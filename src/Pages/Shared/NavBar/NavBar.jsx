@@ -29,7 +29,7 @@ const NavBar = () => {
     </li>
     </>
     return (
-        <div className='pt-4' >
+        <div className='mt-2' >
             <div className="navbar items-center justify-center border rounded-full shadow-slate-200 shadow-md ">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -53,7 +53,7 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user && <img className=' mr-2 w-16 rounded-full h-16 bg-cover' src={user?.photoURL} alt={user?.displayName} />
+                        user && <img className=' mr-2 w-16 rounded-full h-16 ' src={user?.photoURL} alt={user?.displayName} />
                     }
                     {
                         user ? <Link onClick={handleLogout}  className="btn font-bold rounded-full bg-red-300">Logout</Link> : <Link to='/login' className="btn font-bold rounded-full bg-red-300">Login</Link>
