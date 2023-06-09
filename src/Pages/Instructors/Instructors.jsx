@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import InstructorsCard from './InstructorsCard';
 
 const Instructors = () => {
-    
+    const [instructor, setInstructor] = useState([]);
+    const [loading, setLoading] = useState(true)
+    useEffect(() => {
+        fetch('http://localhost:5000/instructors')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setInstructor(data);
+                setLoading(false);
+            })
+    }, [])
+
     return (
-        <div className='my-4'>
-            <div className="card lg:card-side bg-base-100 shadow-xl">
-                <figure><img src="https://media.istockphoto.com/id/530997616/photo/cute-dance-instructor-teaching-little-girls.jpg?s=612x612&w=0&k=20&c=o_yg3BXvf_hHWFCBq-ytQULfNlWB1V8dIvRwFjiMknI=" alt="Album" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Female Dance Instructor</h2>
-                    <p>Click the button to listen on Spotiwhy app.</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Listen</button>
-                    </div>
-                </div>
-            </div>
+        <div className='my-4 grid md:grid-cols-3 gap-5 mb-10'>
+            {
+                instructor.map(item => <InstructorsCard key={item._id} item={item}></InstructorsCard>)
+            }
         </div>
     );
 };
