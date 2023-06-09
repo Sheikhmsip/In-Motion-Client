@@ -1,0 +1,82 @@
+[
+    {
+      "image": "https://media.istockphoto.com/id/815123938/photo/young-ballet-dancers-practicing-at-dance-studio.jpg?s=612x612&w=0&k=20&c=xPOD0KJuutypEacPWrintsnmyKzhx2JmTIEEUL427ZA=",
+      "instructorName": "Sarah Johnson",
+      "email": "sarahjohnson@example.com",
+      "availableSeats": 20,
+      "price": 60.00,
+      "totalStudents": 40
+    },
+    {
+      "image": "https://www.bizasialive.com/wp-content/uploads/2017/05/remo001.jpg",
+      "instructorName": "Remo Dsouza",
+      "email": "ramo@example.com",
+      "availableSeats": 15,
+      "price": 45.00,
+      "totalStudents": 35
+    },
+    {
+      "image": "https://netstorage-tuko.akamaized.net/images/1311632fbb4f5988.jpg?imwidth=900",
+      "instructorName": "Maria Garcia",
+      "email": "mariagarcia@example.com",
+      "availableSeats": 12,
+      "price": 55.00,
+      "totalStudents": 30
+    },
+    {
+      "image": "https://img1.hotstarext.com/image/upload/f_auto,t_hcdl/sources/r1/cms/prod/old_images/EPISODE/4967/1000184967/1000184967-h",
+      "instructorName": "David Brown",
+      "email": "davidbrown@example.com",
+      "availableSeats": 18,
+      "price": 50.00,
+      "totalStudents": 25
+    },
+    {
+      "image": "https://failurebeforesuccess.com/wp-content/uploads/2022/03/Terence-Lewis-acting.jpg",
+      "instructorName": "Emily Davis",
+      "email": "emilydavis@example.com",
+      "availableSeats": 10,
+      "price": 40.00,
+      "totalStudents": 20
+    },
+    {
+      "image": "https://i0.wp.com/americbuzz.com/wp-content/uploads/2021/07/prabhudeva.jpg?resize=640%2C333&ssl=1",
+      "instructorName": "Carlos Hernandez",
+      "email": "carloshernandez@example.com",
+      "availableSeats": 16,
+      "price": 55.00,
+      "totalStudents": 35
+    },
+    {
+      "image": "https://dailypatrika.com/wp-content/uploads/2021/12/Shakira.jpg",
+      "instructorName": "Olivia Wilson",
+      "email": "oliviawilson@example.com",
+      "availableSeats": 14,
+      "price": 60.00,
+      "totalStudents": 30
+    },
+    {
+      "image": "https://static.toiimg.com/photo/59231670.cms?imgsize=286141",
+      "instructorName": "Daniel Lee",
+      "email": "daniellee@example.com",
+      "availableSeats": 12,
+      "price": 45.00,
+      "totalStudents": 28
+    },
+    {
+      "image": "https://www.desiblitz.com/wp-content/uploads/2021/12/10-Best-Male-Bangladeshi-Dancers-10.jpg",
+      "instructorName": "Priya Sharma",
+      "email": "priyasharma@example.com",
+      "availableSeats": 15,
+      "price": 50.00,
+      "totalStudents": 32
+    },
+    {
+      "image": "https://example.com/dance_image10.jpghttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUnSQppk5RlBEVQ-J88sgKiqBgeoANe2Tjitdu8hWaIAGKilLmqr9SfHRV9o-bLnYzSDA&usqp=CAU",
+      "instructorName": "Kwame Adekunle",
+      "email": "kwameadekunle@example.com",
+      "availableSeats": 20,
+      "price": 55.00,
+      "totalStudents": 22
+    }
+  ]

@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Instructors = () => {
+    
     return (
         <div className='my-4'>
             <div className="card lg:card-side bg-base-100 shadow-xl">

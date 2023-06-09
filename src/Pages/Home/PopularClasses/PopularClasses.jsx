@@ -13,13 +13,13 @@ const PopularClasses = () => {
     // console.log(classes)
     const [classes, setClasses] = useState([]);
     const [loading, setLoading] = useState(true);
-  console.log(classes)
+//   console.log(classes)
     useEffect(() =>{
         fetch('http://localhost:5000/classes')
         .then(res => res.json())
         .then(data => {
             setClasses(data);
-            console.log(data)
+            // console.log(data)
             setLoading(false);
            
         
@@ -31,7 +31,7 @@ const PopularClasses = () => {
             <h2 className='text-5xl py-5 mb-2 text-red-400 text-center font-bold'>Our {text}</h2>
            <div className=' grid md:grid-cols-3 gap-5 mb-10'>
           {
-            classes.map(item => <PopularClassCard key={item._id} item={item}></PopularClassCard>)
+            classes.slice(0, 6).map(item => <PopularClassCard key={item._id} item={item}></PopularClassCard>)
           }
     
            
