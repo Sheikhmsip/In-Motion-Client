@@ -1,17 +1,22 @@
 import { Rating, StickerStar } from '@smastrom/react-rating';
 import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const PopularClassCard = ({item}) => {
+    // React Rating 
     const myStyles = {
         itemShapes: StickerStar,
         activeFillColor: '#f53b ',
         inactiveFillColor: '#fa717'
       }
+    // AOS Animation
+    AOS.init();
 
     const {className, instructorName, availableSeats
 , image, price, rating, totalStudents} = item;
     return (
-        <div className="card md:w-96 bg-base-100 shadow-xl image-full">
+        <div data-aos="zoom-in-up" data-aos-duration="1500" className="card md:w-96 bg-base-100 shadow-xl image-full mx-auto">
         <figure><img src={image} alt="" /></figure>
         <div className="card-body">
             <h2 className="card-title">{className}</h2>
