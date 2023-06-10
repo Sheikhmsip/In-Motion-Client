@@ -5,6 +5,7 @@ import { AuthContext } from "../../AuthProviders/AuthProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import { toast } from "react-hot-toast";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 const Login = () => {
@@ -65,14 +66,16 @@ const Login = () => {
                                 <input type="submit" value='Login' className="btn font-bold text-xl bg-red-400" />
                             </div>
                         </form>
+                        <SocialLogin></SocialLogin>
                         <p className="pl-8 mb-4">New Here? <Link to='/signup' className="link-secondary link"> Create an account</Link></p>
-
+                        
                     </div>
                     <div className="text-center md:w-full lg:text-left">
 
                         <p className="py-6">
                             <img src={login} alt="" />
                         </p>
+                        
                     </div>
                 </div>
             </div>
