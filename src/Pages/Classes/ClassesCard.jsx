@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Rating, StickerStar } from '@smastrom/react-rating'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../AuthProviders/AuthProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
 const ClassesCard = ({item}) => {
+    // react rating 
     const myStyles = {
         itemShapes: StickerStar,
         activeFillColor: '#f53b3b ',
@@ -12,8 +16,58 @@ const ClassesCard = ({item}) => {
     // AOS  Animation
       AOS.init();
 
-    const {className, instructorName, availableSeats
+    const {_id, className, instructorName, availableSeats
         , image, price, rating, totalStudents} = item;
+
+        const  {user} = useContext(AuthContext);
+        const navigate = useNavigate();
+        const location = useLocation();
+        // HandleEnroll 
+        const handleEnroll = ()=>{
+            if(user && user.email){
+                const enrollData = {enrollId: _id, email: user.email, className, instructorName, availableSeats, image, price, rating, totalStudents }
+                fetch('http://localhost:5000/all-enroll', {
+                    method: 'POST',
+                    headers: {
+                        'content-type' : 'application/json'
+                    },
+                    body: JSON.stringify(enrollData)
+                })
+                .then( res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if(data.insertedId){
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'Your class is added on selected page',
+                            showConfirmButton: false,
+                            timer: 1500
+                          });
+                    }
+                })
+           
+            }
+            else{
+                Swal.fire({
+                    title: "Are you want to login?",
+                    text: "For enroll you have to login!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, login!",
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      navigate("/login", {state: {from: location}});
+                    }
+                  });
+            }
+            
+        
+        }
+        
+
     return (
         <div  className='mb-5'>
         <div className="md:flex items-center bg-base-100 shadow-xl rounded-3xl">
@@ -30,7 +84,7 @@ const ClassesCard = ({item}) => {
                </div>
              </div>
                 <div className="flex w-full self-end">
-                    <button className="self-end btn w-full bg-red-400">Enroll Class</button>
+                    <button onClick={()=> handleEnroll(item)} className="self-end btn w-full bg-red-400">Enroll Class</button>
                 </div>
             </div>
         </div>
