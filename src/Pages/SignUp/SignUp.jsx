@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet-async";
 import logo from '../../../public/login-removebg-preview.png'
 import { AuthContext } from "../../AuthProviders/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
 
@@ -106,7 +107,7 @@ const SignUp = () => {
                             </div>
                         </form>
                         <p className="pl-8 mb-4">Already have an account <Link className="link-secondary link" to='/login'>Login</Link></p>
-                        {/* <SocialLogin></SocialLogin> */}
+                        <SocialLogin></SocialLogin>
                     </div>
                     <div className="text-center lg:text-left">
                        <p ><img src={logo} alt="" /></p>

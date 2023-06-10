@@ -9,6 +9,7 @@ import Dashboard from "../Layouts/Dashboard";
 import StudentHome from "../Pages/Dashboard/StudentHome/StudentHome";
 import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 
 
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
         {
             path: 'myclasses',
             element: <MyClasses></MyClasses>
+        },
+        {
+            path: 'payment',
+            element: <Payment></Payment>
         }
     ]
 }
