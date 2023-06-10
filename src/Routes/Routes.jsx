@@ -8,6 +8,7 @@ import Classes from "../Pages/Classes/Classes";
 import Dashboard from "../Layouts/Dashboard";
 import StudentHome from "../Pages/Dashboard/StudentHome/StudentHome";
 import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
 {
     path: '/',
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
         {
             path: '/',
