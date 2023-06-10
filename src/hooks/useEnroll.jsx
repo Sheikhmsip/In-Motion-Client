@@ -1,8 +1,9 @@
 import {useContext} from "react"
 import { useQuery } from "@tanstack/react-query";
 
-import useAxiosSecure from "./useAxiosSecure";
+
 import { AuthContext } from "../AuthProviders/AuthProvider";
+import useAxiosSecure from "./useAxiosSecure";
 
 const useEnroll= () => {
   const {user, loading} = useContext(AuthContext)
@@ -31,6 +32,7 @@ const useEnroll= () => {
        
       }
   });
+  console.log(cart)
   return [cart, refetch];
 };
 export default useEnroll;

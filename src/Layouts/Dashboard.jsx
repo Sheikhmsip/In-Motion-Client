@@ -17,7 +17,13 @@ const Dashboard = () => {
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center">
                 <Outlet></Outlet>
-                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                <label
+            htmlFor="my-drawer-2"
+            className="btn btn-primary drawer-button absolute top-1 right-2   lg:hidden"
+          >
+          <img className="w-5 " src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png" alt="" />
+  
+          </label>
 
             </div>
             <div className="drawer-side">
@@ -52,10 +58,10 @@ const Dashboard = () => {
                         <NavLink to='/'><FaHome></FaHome> Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/menu'>Our Menu</NavLink>
+                        <NavLink to='/instructors'>Instructors</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/order/salad'>Order Food</NavLink>
+                        <NavLink to='/classes'>Classes</NavLink>
                     </li>
                 </ul>
 
