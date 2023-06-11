@@ -50,8 +50,8 @@ const ClassesCard = ({item}) => {
             }
             else{
                 Swal.fire({
-                    title: "Are you want to login?",
-                    text: "For enroll you have to login!",
+                    title: "For enroll you have to login!",
+                    text: "Are you want to login",
                     icon: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#3085d6",

@@ -39,8 +39,8 @@ const Dashboard = () => {
                             
                         </> <>
                             <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> Student Home</NavLink></li>
-                            <li><NavLink to="/dashboard/enrolled"><FaCalendarAlt></FaCalendarAlt> My Enron Classes</NavLink></li>
-                            <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
+                            <li><NavLink to="/dashboard/my-enroll-classes"><FaCalendarAlt></FaCalendarAlt> My Enron Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/payment-history"><FaWallet></FaWallet> Payment History</NavLink></li>
                             <li>
                                 <NavLink to="/dashboard/myclasses"><FaShoppingCart></FaShoppingCart> My Selected Class
                                     {/* <span className="badge inl badge-secondary">length</span> */}
