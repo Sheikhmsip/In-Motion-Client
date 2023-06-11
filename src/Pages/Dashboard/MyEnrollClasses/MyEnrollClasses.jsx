@@ -21,7 +21,7 @@ const MyEnrollClasses = () => {
               <tr className=" text-xl">
                 <th>#</th>
                 <th>My Email</th>
-                <th className='text-center'>Quantity</th>
+                <th className='text-center'>Total Quantity</th>
                 <th>Total Pay</th>
                
               </tr>

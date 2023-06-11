@@ -14,7 +14,40 @@ const AllUsers = () => {
   });
   console.log(users)
 
+  const handleDelete = user =>{
+    
 
+    Swal.fire({
+        title: 'Are you sure to delate this user?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`http://localhost:5000/user-delete/${user._id}`, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.deletedCount > 0){    
+                    refetch();                      
+                    Swal.fire(
+                        'Deleted!',
+                        'Users has been deleted.',
+                        'success'
+                    )
+                }
+                refetch()
+            })
+
+        }
+      })
+
+  }
 
   const handleMakeAdmin = id =>{
     console.log(id)
@@ -64,7 +97,7 @@ const AllUsers = () => {
 
 
 
-      <div data-aos="fade-up" className="overflow-x-auto ">
+      <div className="overflow-x-auto ">
       <h3 className="text-center text-3xl mb-5 font-bold mt-14 ">
       Total User: <span className="text-red-500">{users.length}</span>
       </h3>
@@ -73,19 +106,20 @@ const AllUsers = () => {
           {/* head */}
           <thead>
             
-            <tr className=" text-xl">
+            <tr className=" text-xl text-center">
               <th>#</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Role</th>
-              <th>Action</th>
+              <th>Make Admin</th>
+              <th>Make Instructor</th>
+              <th>Delete User</th>
             </tr>
           </thead>
           <tbody>
             {
                 users.map((user, index)=>
             
-                <tr 
+                <tr className="text-center" 
                  key={user._id}>
                 <th>{index+1}</th>
                 <td>{user.name}</td>
@@ -98,7 +132,11 @@ const AllUsers = () => {
                 } </td>
                                  
 
-              
+                <td >
+                    {
+                      user.role === 'admin'? '' : <button onClick={()=>handleDelete(user)} className="btn btn-sm bg-red-500 text-white border-0 "><FaTrashAlt></FaTrashAlt> </button>
+                    }
+                </td>
               </tr>
                 )
             }
