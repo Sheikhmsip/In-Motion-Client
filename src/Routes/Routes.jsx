@@ -12,6 +12,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import MyEnrollClasses from "../Pages/Dashboard/MyEnrollClasses/MyEnrollClasses";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 
 
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
     path: 'dashboard',
     element: <Dashboard></Dashboard>,
     children: [
+        {
+            path:'all-users',
+            element: <AllUsers></AllUsers>
+        },
         {
             path: 'studenthome',
             element: <StudentHome></StudentHome>

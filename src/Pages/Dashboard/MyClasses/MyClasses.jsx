@@ -17,13 +17,13 @@ const MyClasses = () => {
     const handleDelete = (item)=>{
         console.log(item)
         Swal.fire({
-            title: 'Are you sure.?',
+            title: 'You want to delete it?',
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Yes, I want'
           }).then((result) => {
             if (result.isConfirmed) {
                 fetch(`http://localhost:5000/enroll/${item._id}`, {
@@ -35,7 +35,7 @@ const MyClasses = () => {
                     if(data.deletedCount > 0){    
                       refetch();              
                       Swal.fire(
-                        'Deleted!',
+                        'No',
                         'Your file has been deleted.',
                         'success'
                       )
