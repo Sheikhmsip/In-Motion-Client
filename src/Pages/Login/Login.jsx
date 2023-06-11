@@ -39,7 +39,7 @@ const Login = () => {
     return (
         <>
             <Helmet>
-                <title>In Motion|Login</title>
+                <title>In Motion | Login</title>
             </Helmet>
             <h1 className="text-5xl text-red-400 font-bold text-center mt-4">Login Now</h1>
 

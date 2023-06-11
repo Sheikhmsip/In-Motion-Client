@@ -9,7 +9,7 @@ const PrivateRouter = ({children}) => {
     const location = useLocation();
     if(loading){
         return <div className='pt-10 flex items-center justify-center'>
-            <progress className="progress  w-56 mx-auto text-center"></progress>
+            <span className="loading loading-dots w-56 mx-auto text-center bg-red-400 my-auto"></span>
         </div>
     }
     if(user){

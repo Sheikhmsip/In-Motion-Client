@@ -93,7 +93,7 @@ const AllUsers = () => {
 
 
   return (
-    <div className="w-full mx-auto  bg-red-400 ">
+    <div className="w-full mx-auto bg-red-400 ">
       <div className="overflow-x-auto ">
       <h3 className=" pl-4 text-3xl mb-5 font-bold mt-4 ">
       Total User: <span className="text-red-500">{users.length}</span>

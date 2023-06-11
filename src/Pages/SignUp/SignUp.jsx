@@ -52,6 +52,7 @@ const SignUp = () => {
         .catch(error =>{
             console.log(error)
             toast.error("Already use this email. please login ")
+            setError("Already use this email ")
           } )
       
       })
@@ -90,7 +91,7 @@ const SignUp = () => {
                                 </label>
                                 <input type="email" name="email" {...register("email", { required: true })} placeholder="email" className="input input-bordered" />
                                 {errors.email && <span className=" text-red-600">Email is required</span>}
-                                {error? <><p className="text-red-500">already use this email</p></> : ' '}
+                                {errors.email && <p className="text-red-500">Already use this email</p> }
                                
                             </div>
                             <div className="form-control">

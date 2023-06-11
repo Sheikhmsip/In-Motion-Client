@@ -25,13 +25,13 @@ const ClassesCard = ({item}) => {
         // HandleEnroll 
         const handleEnroll = ()=>{
             if(user && user.email){
-                const enrollData = {enrollId: _id, email: user.email, className, instructorName, availableSeats, image, price, rating, totalStudents }
+                const data = {enrollId: _id, email: user.email, className, instructorName, availableSeats, image, price, rating, totalStudents }
                 fetch('http://localhost:5000/all-enroll', {
                     method: 'POST',
                     headers: {
                         'content-type' : 'application/json'
                     },
-                    body: JSON.stringify(enrollData)
+                    body: JSON.stringify(data)
                 })
                 .then( res => res.json())
                 .then(data => {
@@ -63,8 +63,6 @@ const ClassesCard = ({item}) => {
                     }
                   });
             }
-            
-        
         }
         
 
