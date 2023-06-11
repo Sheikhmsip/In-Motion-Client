@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import InstructorsCard from './InstructorsCard';
+import { Helmet } from 'react-helmet-async';
 
 const Instructors = () => {
     const [instructor, setInstructor] = useState([]);
@@ -15,11 +16,16 @@ const Instructors = () => {
     }, [])
 
     return (
+        <>
+        <Helmet>
+            <title>In Motion|Instructors</title>
+        </Helmet>
         <div className='my-4 grid md:grid-cols-3 gap-5 mb-10'>
             {
                 instructor.map(item => <InstructorsCard key={item._id} item={item}></InstructorsCard>)
             }
         </div>
+        </>
     );
 };
 

@@ -33,18 +33,17 @@ const Dashboard = () => {
                     
                          <>
                             <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Admin Home</NavLink></li>
-                            <li><NavLink to="/dashboard/addItem"> <FaUtensils></FaUtensils> Add an Item</NavLink></li>
-                            <li><NavLink to="/dashboard/manageitems"><FaWallet></FaWallet> Manage Items</NavLink></li>
-                            <li><NavLink to="/dashboard/history"><FaBook></FaBook> Manage Bookings</NavLink></li>
+                            <li><NavLink to="/dashboard/addItem"> Manage Students </NavLink></li>
+                            <li><NavLink to="/dashboard/manageitems">Manage Instructors</NavLink></li>
                             <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
                             
                         </> <>
-                            <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> User Home</NavLink></li>
-                            <li><NavLink to="/dashboard/reservations"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>
+                            <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> Student Home</NavLink></li>
+                            <li><NavLink to="/dashboard/enrolled"><FaCalendarAlt></FaCalendarAlt> My Enron Classes</NavLink></li>
                             <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
                             <li>
                                 <NavLink to="/dashboard/myclasses"><FaShoppingCart></FaShoppingCart> My Selected Class
-                                    <span className="badge inl badge-secondary">length</span>
+                                    {/* <span className="badge inl badge-secondary">length</span> */}
                                 </NavLink>
 
                             </li>
@@ -55,7 +54,7 @@ const Dashboard = () => {
                     <div className='divider'></div>
 
                     <li>
-                        <NavLink to='/'><FaHome></FaHome> Home</NavLink>
+                        <NavLink to='/'><FaHome></FaHome>Home</NavLink>
                     </li>
                     <li>
                         <NavLink to='/instructors'>Instructors</NavLink>

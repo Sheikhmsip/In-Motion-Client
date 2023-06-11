@@ -2,7 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import useEnroll from '../../../hooks/useEnroll';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+
 
 
 const MyClasses = () => {
@@ -13,7 +14,7 @@ const MyClasses = () => {
     const handleDelete = (item)=>{
         console.log(item)
         Swal.fire({
-            title: 'Are you sure?',
+            title: 'Are you sure.?',
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
@@ -30,11 +31,11 @@ const MyClasses = () => {
                     // console.log(data)
                     if(data.deletedCount > 0){    
                       refetch();              
-                        Swal.fire(
-                            'Deleted!',
-                            'Your Class has been deleted.',
-                            'success'
-                        )
+                      Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                      )
                         
                     }
                     refetch();
@@ -51,11 +52,11 @@ const MyClasses = () => {
           <title>In Motion| Dashboard | My Classes</title>
         </Helmet>
         <div className="flex uppercase font-semibold justify-evenly items-center gap-4 mb-2">
-          <h3 className="text-2xl">Total Class: <span className="text-red-500">{cart.length}</span></h3>
+          <h3 className="text-2xl">Total Selected Class: <span className="text-red-500">{cart.length}</span></h3>
           <h3 className="text-2xl">Total Price: <span className="text-red-500">${total}</span></h3>
           <Link to="/dashboard/payment">
             
-            <button className="btn border-0 btn-primary ">Pay Now</button>
+            <button className="btn btn-outline bg-red-400 text-white">Pay Now</button>
           </Link>
         </div>
   
@@ -96,7 +97,7 @@ const MyClasses = () => {
                   <th>
                     <button
                       onClick={() => handleDelete(item)}
-                      className="btn bg-red-500 text-white border-0 "
+                      className="btn bg-red-400 text-white border-0 "
                     >
                       delete
                     </button>
