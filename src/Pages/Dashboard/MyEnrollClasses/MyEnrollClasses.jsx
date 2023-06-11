@@ -26,7 +26,7 @@ const MyEnrollClasses = () => {
                
               </tr>
             </thead>
-            <tbody className='text-center'>
+            <tbody className='text-center text-lg'>
               {myEnroll.map((item, index) => (
                 <tr  
                  key={item._id}>

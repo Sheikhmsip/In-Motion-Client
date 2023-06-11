@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 import ActiveLink from '../ActiveLink/ActiveLink';
 
 const NavBar = () => {
+    
     AOS.init();
     const {user, logOut} = useContext(AuthContext);
     const handleLogout = () =>{
@@ -28,9 +29,9 @@ const NavBar = () => {
     <li>
         <ActiveLink to='/classes'>Classes</ActiveLink>
     </li>
-    <li>
-        <ActiveLink to='/dashboard'>Dashboard</ActiveLink>
-    </li>
+   {
+
+   }
     </>
     return (
         <div  className='mt-2'  >

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
@@ -93,12 +93,9 @@ const AllUsers = () => {
 
 
   return (
-    <div className="w-11/12 mx-auto">
-
-
-
+    <div className="w-full mx-auto  bg-red-400 ">
       <div className="overflow-x-auto ">
-      <h3 className="text-center text-3xl mb-5 font-bold mt-14 ">
+      <h3 className=" pl-4 text-3xl mb-5 font-bold mt-4 ">
       Total User: <span className="text-red-500">{users.length}</span>
       </h3>
         <table className="table w-full">
@@ -110,12 +107,14 @@ const AllUsers = () => {
               <th>#</th>
               <th>Name</th>
               <th>Email</th>
+              <th>Current Role</th>
               <th>Make Admin</th>
               <th>Make Instructor</th>
               <th>Delete User</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-xl
+          ">
             {
                 users.map((user, index)=>
             
@@ -124,8 +123,10 @@ const AllUsers = () => {
                 <th>{index+1}</th>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td>{user.role === 'admin'? 'Admin' :
-                <button onClick={()=>handleMakeAdmin(user._id)} className="btn btn-sm bg-sky-500 text-white border-0 ">Admin</button>
+                <td>{user?.role ? `${user?.role}`: 'Student'}</td>
+                <td>{user.role === 'admin'?  "Admin" :
+                <button onClick={()=>handleMakeAdmin(user._id)} className="btn btn-sm bg-orange-500 text-white
+                border-0 ">Admin</button>
                 } </td>
                  <td>{user.role === 'instructor'? 'instructor' :
                 <button onClick={()=>handleMakeInstructor(user._id)} className="btn btn-sm bg-sky-500 text-white border-0 ">instructor</button>

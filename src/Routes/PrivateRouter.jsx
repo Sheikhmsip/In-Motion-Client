@@ -8,7 +8,9 @@ const PrivateRouter = ({children}) => {
     const {user, loading} = useContext(AuthContext)
     const location = useLocation();
     if(loading){
-        return <progress className="progress w-56 text-white bg-white"></progress>
+        return <div className='pt-10 flex items-center justify-center'>
+            <progress className="progress  w-56 mx-auto text-center"></progress>
+        </div>
     }
     if(user){
         return children

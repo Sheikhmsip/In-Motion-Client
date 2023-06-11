@@ -50,7 +50,7 @@ const MyClasses = () => {
 
     }
     return (
-        <div className="w-full pb-[700px] pt-20  text-black">
+        <div className="w-full pt-10 text-black">
         <Helmet>
           <title>In Motion| Dashboard | My Classes</title>
         </Helmet>
@@ -59,7 +59,7 @@ const MyClasses = () => {
           <h3 className="text-2xl">Total Price: <span className="text-red-500">${total}</span></h3>
           <Link to="/dashboard/payment">
             
-            <button className="btn btn-outline bg-red-400 text-white">Pay Now</button>
+            <button className="btn btn-outline bg-red-700 text-white">Pay Now</button>
           </Link>
         </div>
   
@@ -69,7 +69,7 @@ const MyClasses = () => {
             {/* head */}
             <thead>
               <tr className="text-black text-xl">
-                <th>#</th>
+                <th>Serial</th>
                 <th>Image</th>
                 <th>Class Name</th>
                 <th>Instructor Name</th>
@@ -77,7 +77,7 @@ const MyClasses = () => {
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody className='text-black'>
+            <tbody className='text-black text-lg'>
               {cart.map((item, index) => (
                 <tr 
                  key={item._id}
@@ -100,7 +100,7 @@ const MyClasses = () => {
                   <th>
                     <button
                       onClick={() => handleDelete(item)}
-                      className="btn bg-red-400 text-white border-0 "
+                      className="btn bg-red-700 text-white border-0 "
                     >
                       delete
                     </button>
