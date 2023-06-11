@@ -18,11 +18,14 @@ const Payment = () => {
 
     return (
         <div className='text-black pb-[700px] w-full pt-20 '>
-          
-            <h2 className='text-3xl'>Taka o teka tumi uira uira aso..</h2>
-            <Elements stripe={stripePromise}>
-                <CheckoutForm cart={cart} price={price} ></CheckoutForm>
-            </Elements>
+
+            <h2 className='text-3xl text-center text-red-500 font-bold py-5'>Pay By Card <span className='text-yellow-400'>${price}</span></h2>
+           
+                <Elements className='' stripe={stripePromise}>
+                    <CheckoutForm cart={cart} price={price} ></CheckoutForm>
+                </Elements>
+           
+
         </div>
     );
 };

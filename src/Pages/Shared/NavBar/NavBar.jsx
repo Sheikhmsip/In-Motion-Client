@@ -5,6 +5,7 @@ import logo from '../../../../public/logo.png'
 import { AuthContext } from '../../../AuthProviders/AuthProvider';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const NavBar = () => {
     AOS.init();
@@ -19,16 +20,16 @@ const NavBar = () => {
 
     const navItems = <>
     <li className=' '>
-        <Link to='/'>Home</Link>
+        <ActiveLink to='/'>Home</ActiveLink>
     </li>
     <li>
-        <Link to='/instructors'>Instructors</Link>
+        <ActiveLink to='/instructors'>Instructors</ActiveLink>
     </li>
     <li>
-        <Link to='/classes'>Classes</Link>
+        <ActiveLink to='/classes'>Classes</ActiveLink>
     </li>
     <li>
-        <Link to='/dashboard'>Dashboard</Link>
+        <ActiveLink to='/dashboard'>Dashboard</ActiveLink>
     </li>
     </>
     return (

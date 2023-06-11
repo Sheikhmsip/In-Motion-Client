@@ -98,12 +98,12 @@ console.log(clientSecret)
             cartItems: cart.map(item => item._id),
             menuItems: cart.map(item => item.enrollId),
            image: cart.map(item => item.image),
-            className: cart.map(item => item.danceName)
+            className: cart.map(item => item.className)
           }
           axiosSecure.post('/payments', payment)
           .then(res => {
             console.log(res.data);
-            if(res.data.result.insertedId){
+            if(res.data.insertResult.insertedId){
               Swal.fire({
                 position: 'top-center',
                 icon: 'success',
@@ -122,15 +122,15 @@ console.log(clientSecret)
 
     return (
         <>
-        <form className='w-2/3 mx-auto' onSubmit={handleSubmit}>
-        <CardElement className='mb'
+        <form className='w-2/3 bg-red-400 p-3 mx-auto rounded-3xl' onSubmit={handleSubmit}>
+        <CardElement className='pl-4 input-accent'
           options={{
             style: {
               base: {
                 fontSize: '16px',
-                color: 'black',
+                color: 'white',
                 '::placeholder': {
-                  color: 'black',
+                  color: 'white',
                 },
               },
               invalid: {
@@ -140,14 +140,13 @@ console.log(clientSecret)
           }}
         />
          {
-        cardError && <p className='text-red-500'>{cardError}</p>
+        cardError && <p className='text-red-200'>{cardError}</p>
       }
       {
-        transactionId && <p className='text-green-500'>Transaction complete with
-          transaction_id: <span className='text-red-500'>{transactionId}</span>
+        transactionId && <p className='text-green-800 font-bold pt-4'>Transaction complete your transaction_id: <span className='text-slate-900'>{transactionId}</span>
         </p>
       }
-        <button className='btn btn-wide bg-blue-700 mt-10' type="submit" disabled={!stripe || !clientSecret || processing}>
+        <button className='btn w-full bg-orange-500 mt-10' type="submit" disabled={!stripe || !clientSecret || processing}>
           Pay Now
         </button>
       </form>
