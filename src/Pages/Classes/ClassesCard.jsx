@@ -26,7 +26,7 @@ const ClassesCard = ({item}) => {
         const handleEnroll = ()=>{
             if(user && user.email){
                 const data = {enrollId: _id, email: user.email, className, instructorName, availableSeats, image, price, rating, totalStudents }
-                fetch('http://localhost:5000/all-enroll', {
+                fetch('https://summer-camp-server-three.vercel.app/all-enroll', {
                     method: 'POST',
                     headers: {
                         'content-type' : 'application/json'
