@@ -29,7 +29,7 @@ const PopularClasses = () => {
     return (
         <div className='mx-auto w-[100%]'>
             <h2 className='text-5xl py-5 mb-2 text-red-400 text-center font-bold'>Our {text}</h2>
-           <div className=' grid md:grid-cols-3 gap-5 mb-10 justify-between mx-auto'>
+           <div className='grid md:grid-cols-3 gap-5 mb-10 justify-between mx-auto'>
           {
             classes.slice(0, 6).map(item => <PopularClassCard key={item._id} item={item}></PopularClassCard>)
           }
