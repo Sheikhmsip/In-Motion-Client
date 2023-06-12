@@ -67,9 +67,9 @@ const ClassesCard = ({item}) => {
         
 
     return (
-        <div  className='mb-5'>
-        <div className="md:flex items-center bg-base-100 shadow-xl rounded-3xl">
-            <figure data-aos="fade-right" data-aos-duration="1500" className='md:w-1/2 '><img src={image} alt="Album" className='w-[95%] h-[60%] rounded-3xl' /></figure>
+        
+        <div className="md:flex items-center bg-base-100 my-3 shadow-xl rounded-3xl">
+            <figure data-aos="fade-right" data-aos-duration="1500" className='md:w-1/2 mx-auto '><img src={image} alt="Album" className='w-72 h-72 mx-auto bg-contain rounded-3xl' /></figure>
             <div data-aos="fade-left" data-aos-duration="1500" className="grid items-center  md:w-1/2 pt-3 pl-3 shadow-lg ">
              <div>
              <h2 className="card-title text-4xl text-red-400 font-extrabold"> {className}</h2>
@@ -86,7 +86,7 @@ const ClassesCard = ({item}) => {
                 </div>
             </div>
         </div>
-        </div>
+        
     );
 };
 

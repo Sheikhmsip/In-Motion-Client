@@ -17,6 +17,7 @@ import PrivateRouter from "./PrivateRouter";
 import AdminRoute from "./AdminRoute";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 import AddClass from "../Pages/Dashboard/AddClass/AddClass";
+import MyAddedClass from "../Pages/Dashboard/MyAddedClass/MyAddedClass";
 
 
 
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
         {
             path: 'add-class',
             element: <AddClass></AddClass>
+        },
+        {
+            path: 'instructor-class',
+            element: <MyAddedClass></MyAddedClass>
         },
         {
             path: 'studenthome',

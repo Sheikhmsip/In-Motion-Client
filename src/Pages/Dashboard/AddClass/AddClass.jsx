@@ -29,15 +29,16 @@ const AddClass = () => {
             .then((imgResponse) => {
                 if (imgResponse.success) {
                     const imgUrl = imgResponse.data.display_url;
-                    const { price, instructorName, className, rating, availableSeats, email } = data;
+                    const { price, instructorName, className, rating, availableSeats, email, totalStudents } = data;
                     const newItem = {
                         instructorName,
-                        price: parseFloat(price),
+                        price: parseInt(price),
                         className,
-                        availableSeats: parseFloat(availableSeats),
+                        availableSeats: parseInt(availableSeats),
+                        totalStudents: parseInt(totalStudents),
                         image: imgUrl,
                         email,
-                        rating: parseFloat(rating)
+                        rating: parseInt(rating)
                     };
                     //   console.log(newItem);
                     axiosSecure.post("/addClass", newItem).then((data) => {
@@ -67,43 +68,49 @@ const AddClass = () => {
                 <input
                     type="text"
                     placeholder="Class Name"
-                    {...register("className", { required: true, maxLength: 80 })}
+                    {...register("className", { required: true, maxLength: 20 })}
                     className="input input-bordered w-full "
                 />
 
                 <input
                     type="text"
-                    placeholder="Instructor name"
+                    placeholder="Instructor Name"
                     value={user?.displayName}
-                    {...register("instructorName", { required: true, maxLength: 80 })}
+                    {...register("instructorName", { required: true })}
                     className="input input-bordered w-full "
                 />
 
                 <input
                     type="email"
                     value={user?.email}
-                    {...register("email", { required: true, maxLength: 80 })}
+                    {...register("email", { required: true })}
                     className="input input-bordered w-full "
                 />
 
                 <input
                     type="number"
+                    placeholder="Total Seats"
+                    {...register("totalStudents", { required: true })}
+                    className="input input-bordered w-full "
+                />
+                <input
+                    type="number"
                     placeholder="Available Seats"
-                    {...register("availableSeats", { required: true, maxLength: 80 })}
+                    {...register("availableSeats", { required: true})}
                     className="input input-bordered w-full "
                 />
 
                 <input
                     type="number"
                     placeholder="Price"
-                    {...register("price", { required: true, maxLength: 80 })}
+                    {...register("price", { required: true, maxLength: 20})}
                     className="input input-bordered w-full "
                 />
 
                 <input
                     type="number"
-                    defaultValue="4.5"
-                    {...register("rating", { required: true, maxLength: 80 })}
+                    placeholder='Rating'
+                    {...register("rating", { required: true})}
                     className="input input-bordered w-full text-black "
                 />
 

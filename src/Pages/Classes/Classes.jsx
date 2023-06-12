@@ -31,7 +31,7 @@ const Classes = () => {
             <Helmet>
                 <title>In Motion|Classes</title>
             </Helmet>
-            <div className='my-4'>
+            <div className='my-4 grid md:grid-cols-2 gap-3 items-stretch'>
                 {
                     classes.map(item => <ClassesCard key={item._id} item={item}></ClassesCard>)
                 }

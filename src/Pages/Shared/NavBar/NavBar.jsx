@@ -6,10 +6,14 @@ import { AuthContext } from '../../../AuthProviders/AuthProvider';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ActiveLink from '../ActiveLink/ActiveLink';
+import useAdmin from '../../../hooks/useAdmin';
+import useInstructor from '../../../hooks/useInstructor';
 
 const NavBar = () => {
     AOS.init();
     const {user, logOut} = useContext(AuthContext);
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     const handleLogout = () =>{
         logOut()
         .then(() => {})
@@ -28,9 +32,15 @@ const NavBar = () => {
     <li>
         <ActiveLink to='/classes'>Classes</ActiveLink>
     </li>
-    <li>
-        <ActiveLink to='/dashboard'>Dashboard</ActiveLink>
-    </li>
+   {
+    isAdmin?  <li>
+    <ActiveLink to='/dashboard/manage-users'>Dashboard</ActiveLink>
+</li> : isInstructor? <li>
+    <ActiveLink to='/dashboard/instructor-class'>Dashboard</ActiveLink>
+</li>  : user ? <li>
+    <ActiveLink to='/dashboard/myclasses'>Dashboard</ActiveLink>
+</li> : ''
+   }
     </>
     return (
         <div  className='mt-2'  >
