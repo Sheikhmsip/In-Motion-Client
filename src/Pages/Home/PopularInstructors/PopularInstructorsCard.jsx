@@ -10,8 +10,8 @@ const PopularInstructorsCard = ({item}) => {
     return (
        
             <div  data-aos="zoom-in-up" data-aos-duration="1500" className="card md:w-96 mx-auto bg-base-100 shadow-xl mx-auto">
-                <figure className="rounded-full">
-                    <img src={image} alt="" className="rounded-full bg-cover  h-64 w-64" />
+                <figure className="">
+                    <img src={image} alt="" className=" bg-cover  h-64 w-64" />
                 </figure>
                 <div className="card-body text-xl">
                     <h2 className="card-title font-bold">{instructorName}</h2>

@@ -11,9 +11,7 @@ const InstructorsCard = ({item}) => {
           <p className=' text-xl bg-red-300 pl-3 rounded-full'>Fee : ${price}</p>
           <p className=' text-xl bg-red-300 pl-3 rounded-full'>Available Seat: {availableSeats}</p>
           <p className=' text-xl bg-red-300 pl-3 rounded-full'>Total Students: {totalStudents}</p>
-          {/* <div className="card-actions justify-end">
-            <button className="btn btn-primary">Learn now!</button>
-          </div> */}
+          
         </div>
       </div>
     );

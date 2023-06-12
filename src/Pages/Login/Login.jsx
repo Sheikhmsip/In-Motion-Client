@@ -1,11 +1,12 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from '../../../public/login-removebg-preview.png'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProviders/AuthProvider";
-import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import { toast } from "react-hot-toast";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 
 const Login = () => {
@@ -14,6 +15,10 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+    const [show, setShow] = useState(false)
+   const handleShowPassword = () => {
+        setShow(!show)
+   }
 
     const handleLogin = event => {
         event.preventDefault();
@@ -55,12 +60,19 @@ const Login = () => {
                                 </label>
                                 <input type="email" placeholder="email" name="email" className="input input-bordered" />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" />
-
+                             
+                              
+                              <input type={show? "text" : "password"} name="password" placeholder="password" className="input input-bordered " />
+                                <span onClick={handleShowPassword} className="absolute bottom-4 right-3 cursor-pointer">
+                                   { show? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
+                                   }
+                        
+                              </span>
+                              
                             </div>
 
                             <div className="form-control mt-6">

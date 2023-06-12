@@ -5,6 +5,8 @@ import 'aos/dist/aos.css';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../AuthProviders/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useAdmin from '../../hooks/useAdmin';
+import useInstructor from '../../hooks/useInstructor';
 const ClassesCard = ({item}) => {
     // react rating 
     const myStyles = {
@@ -16,13 +18,16 @@ const ClassesCard = ({item}) => {
     // AOS  Animation
       AOS.init();
 
+      const  {user} = useContext(AuthContext);
+      const navigate = useNavigate();
+      const location = useLocation();
+      const [isAdmin] = useAdmin();
+      const [isInstructor] = useInstructor()
+
     const {_id, className, instructorName, availableSeats
         , image, price, rating, totalStudents} = item;
 
-        const  {user} = useContext(AuthContext);
-        const navigate = useNavigate();
-        const location = useLocation();
-        // HandleEnroll 
+    
         const handleEnroll = ()=>{
             if(user && user.email){
                 const data = {enrollId: _id, email: user.email, className, instructorName, availableSeats, image, price, rating, totalStudents }
@@ -82,7 +87,11 @@ const ClassesCard = ({item}) => {
                </div>
              </div>
                 <div className="flex w-full self-end">
-                    <button onClick={()=> handleEnroll(item)} className="self-end btn w-full bg-red-400">Enroll Class</button>
+                    {
+                        isAdmin? <button disabled="disabled" onClick={()=> handleEnroll(item)} className="self-end btn w-full bg-red-400"> <span className='text-red-500'>Admin</span> </button> :
+                         isInstructor? <button disabled="disabled" onClick={()=> handleEnroll(item)} className="self-end btn w-full bg-red-400"> <span className='text-red-500'>Instructor</span> </button> :
+                          <button onClick={()=> handleEnroll(item)} className="self-end btn w-full bg-red-400">Enroll Class</button>
+                    }
                 </div>
             </div>
         </div>
