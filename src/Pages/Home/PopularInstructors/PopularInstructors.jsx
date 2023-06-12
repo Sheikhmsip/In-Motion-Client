@@ -13,7 +13,7 @@ const PopularInstructors = () => {
         fetch('https://summer-camp-server-sheikhmsip.vercel.app/instructors')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setInstructor(data);
                 setLoading(false);
             })

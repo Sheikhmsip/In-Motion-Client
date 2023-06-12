@@ -9,7 +9,7 @@ const PopularInstructorsCard = ({item}) => {
      AOS.init();
     return (
        
-            <div  data-aos="zoom-in-up" data-aos-duration="1500" className="card md:w-96 mx-auto bg-base-100 shadow-xl mx-auto">
+            <div  data-aos="zoom-in-up" data-aos-duration="1500" className="card md:w-96 mx-auto bg-base-100 shadow-xl ">
                 <figure className="">
                     <img src={image} alt="" className=" bg-cover  h-64 w-64" />
                 </figure>

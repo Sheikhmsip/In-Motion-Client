@@ -27,12 +27,12 @@ const useEnroll= () => {
 
     queryFn: async () => {
         const res = await axiosSecure(`/enroll?email=${user?.email}`)
-        console.log('res from axios', res)
+        // console.log('res from axios', res)
         return res.data;  
        
       }
   });
-  console.log(cart)
+  // console.log(cart)
   return [cart, refetch];
 };
 export default useEnroll;

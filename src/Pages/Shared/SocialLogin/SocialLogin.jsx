@@ -15,7 +15,7 @@ const SocialLogin = () => {
         googleSignIn()
         .then(result => {
             const loggedInUser = result.user;
-            console.log(loggedInUser)
+            // console.log(loggedInUser)
             const saveUser = { name: loggedInUser.name, email: loggedInUser.email }
             fetch('https://summer-camp-server-three.vercel.app/users', {
                 method: "POST",

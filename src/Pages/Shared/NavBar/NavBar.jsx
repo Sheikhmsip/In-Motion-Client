@@ -18,7 +18,7 @@ const NavBar = () => {
         logOut()
         .then(() => {})
         .catch(error =>{
-            console.log(error);
+            // console.log(error);
         })
     }
 
