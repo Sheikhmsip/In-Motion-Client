@@ -62,14 +62,14 @@ const AddClass = () => {
 
     console.log(errors);
     return (
-        <div className=" w-full p-11 ">
-            <h2 className="text-sky-500 text-4xl font-bold text-center my-16">Add Dance Information</h2>
-            <form onSubmit={handleSubmit(onSubmit)} className="grid md:w-8/12 mx-auto gap-2">
+        <div className="p-11">
+            <h2 className=" py-2 rounded-tr-full rounded-tl-full bg-slate-400 text-4xl font-bold text-center ">Add Class Form</h2>
+            <form onSubmit={handleSubmit(onSubmit)} className="grid  mx-auto gap-2">
                 <input
                     type="text"
                     placeholder="Class Name"
                     {...register("className", { required: true, maxLength: 20 })}
-                    className="input input-bordered w-full "
+                    className="input rounded-none w-full "
                 />
 
                 <input
@@ -120,7 +120,7 @@ const AddClass = () => {
                     className="file-input file-input-bordered bg-red-400 text-white w-full max-w-xs"
                 />
 
-                <input type="submit" value="Add class" className="btn btn-primary" />
+                <input type="submit" value="Add class" className="btn bg-red-400" />
             </form>
         </div>
     );

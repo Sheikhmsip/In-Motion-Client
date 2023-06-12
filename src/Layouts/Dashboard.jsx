@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaWallet, FaHome, FaSchool, FaUsers, FaUtensils, FaCalendarAlt, FaShoppingCart, FaChalkboardTeacher, } from "react-icons/fa";
+import { FaWallet, FaHome, FaSchool, FaUsers, FaPlusCircle, FaCalendarAlt, FaShoppingCart, FaChalkboardTeacher, } from "react-icons/fa";
 import useAdmin from '../hooks/useAdmin';
 import useInstructor from '../hooks/useInstructor';
 import useAuth from '../hooks/useAuth';
@@ -39,8 +39,8 @@ const Dashboard = () => {
                             <li><NavLink to="/dashboard/manage-users"><FaUsers></FaUsers> Manage User</NavLink></li>
 
                         </> : isInstructor ? <>
-                            <li><NavLink to="/dashboard/instructor-class"><FaHome></FaHome>Added Classes</NavLink></li>
-                            <li><NavLink to="/dashboard/add-class"><FaHome></FaHome> Add Class</NavLink></li>
+                            <li><NavLink to="/dashboard/instructor-class"><FaSchool></FaSchool> My Courses</NavLink></li>
+                            <li><NavLink to="/dashboard/add-class"><FaPlusCircle></FaPlusCircle> Add Course</NavLink></li>
 
                         </>
                             : <>
