@@ -58,7 +58,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" name="email" className="input input-bordered" />
+                                <input type="email" placeholder="email" name="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control relative">
                                 <label className="label">
@@ -66,7 +66,7 @@ const Login = () => {
                                 </label>
                              
                               
-                              <input type={show? "text" : "password"} name="password" placeholder="password" className="input input-bordered " />
+                              <input type={show? "text" : "password"} name="password" placeholder="password" className="input input-bordered required: " />
                                 <span onClick={handleShowPassword} className="absolute bottom-4 right-3 cursor-pointer">
                                    { show? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
                                    }
